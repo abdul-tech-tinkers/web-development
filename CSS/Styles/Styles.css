@@ -1,0 +1,79 @@
+/* comments are here */
+
+/*
+#004777
+#00a5cf
+#a30000
+#ff7700
+#efd28d
+
+
+*/
+
+/* Global */
+
+body {
+  color: #343434;
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 300px;
+}
+
+a {
+  color: #ffe66d;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.content-wrap {
+  /* brings the texts to the center and width is fixed - see blue header */
+  width: 800px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+h2 {
+  margin: 0;
+}
+/* Profile  */
+
+header {
+  background: #2f3061;
+  color: #f7fff7;
+}
+
+/* Projects */
+.projects {
+  background: #f7fff7;
+}
+
+.projects a:hover {
+  background: rgb(47, 48, 97);
+}
+
+.projects a {
+  color: #f7fff7;
+  background: #2f3061;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.viewprojectbutton {
+  display: inline;
+}
+/* Working */
+.work-experience {
+  background: #a1c6d7;
+}
+
+/* Education */
+
+/* Contacts */
+.contacts {
+  background-color: #343434;
+  color: #f7fff7;
+}
