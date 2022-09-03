@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>title Jameel</title>
     <link rel="stylesheet" href="Styles/Styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
@@ -12,7 +18,7 @@
       <header>
         <div class="content-wrap">
           <h1>Atellica Portfolio</h1>
-          <h2>Job title or tagline</h2>
+          <h2>Chemistry and Immunoassay Analyzer</h2>
           <p>
             Add your profile copy here. Add more paragraphs or links as needed.
             Here is some dummy text: Lorem ipsum dolor sit amet, consectetur
@@ -26,7 +32,7 @@
 
       <!-- ********************  PROJECTS / PORTFOLIO  ********************* -->
       <section class="projects">
-        <div class="content-wrap">
+        <div class="content-wrap divider">
           <h2>Featured Projects</h2>
           <p>
             View selected projects below. More information can be found at
@@ -34,17 +40,49 @@
           </p>
 
           <!-- Copy the whole <section> block to add more projects. -->
-          <section>
-            <h3>Project Name</h3>
+          <section class="project-item">
             <img
-              src="images/project-women-tech.jpg"
+              src="images/project-wire-ipsum.jpg"
               alt="description of image"
             />
+            <h3>Atellica</h3>
+
             <p>
               Summary or description of the project and/or your role in it. Add
               as many paragraphs as you need.
             </p>
-            <a href="#" target="_blank" class="viewprojectbutton">View project / case study</a>
+            <a href="#" target="_blank" class="viewprojectbutton"
+              >View project / case study</a
+            >
+          </section>
+
+          <section class="project-item">
+            <img
+              src="images/project-women-tech.jpg"
+              alt="description of image"
+            />
+            <h3>CI Analyzer</h3>
+
+            <p>
+              Summary or description of the project and/or your role in it. Add
+              as many paragraphs as you need.
+            </p>
+            <a href="#" target="_blank" class="viewprojectbutton"
+              >View project / case study</a
+            >
+          </section>
+
+          <section class="project-item">
+            <img src="images/project-courses.jpg" alt="description of image" />
+            <h3>CC Analyzer</h3>
+
+            <p>
+              Summary or description of the project and/or your role in it. Add
+              as many paragraphs as you need.
+            </p>
+            <a href="#" target="_blank" class="viewprojectbutton"
+              >View project / case study</a
+            >
           </section>
         </div>
         <!-- End of Project block. -->
@@ -52,20 +90,56 @@
 
       <!-- ***********************  WORK EXPERIENCE  *********************** -->
       <section class="work-experience">
-        <div class="content-wrap">
+        <div class="content-wrap item-details divider">
           <h2>Work Experience</h2>
-          <img src="images/project-courses.jpg" />
+          <img src="images/sharon-mccutcheon-unsplash.jpg" />
           <p>
             Optional paragraph for work experience summary. Not a part of the
             job details. Delete if not being used.
           </p>
 
           <!-- Copy this whole <section> block to add more jobs. -->
-          <section class="job">
-            <div class="content-wrap">
-              <h3>Job title</h3>
+          <section class="job-item">
+            <div class="job-details">
+              <h3>Frontend Developer</h3>
+              <p>Siemens Healthineers</p>
+              <p>Present</p>
+            </div>
+            <div class="job-summary">
+              <p>Job summary goes here. Add as many paragraphs as you need.</p>
+              <p>Optional list:</p>
+              <ul>
+                <li>Delete this list if you don't need it.</li>
+                <li>Created...</li>
+                <li>Lead...</li>
+                <li>Responsible for...</li>
+              </ul>
+            </div>`
+          </section>
+          <section class="job-item">
+            <div class="job-details">
+              <h3>Bosch</h3>
               <p>Company Name</p>
               <p>Date at job</p>
+            </div>
+            <div class="job-summary">
+              <p>Job summary goes here. Add as many paragraphs as you need.</p>
+              <p>Optional list:</p>
+              <ul>
+                <li>Delete this list if you don't need it.</li>
+                <li>Created...</li>
+                <li>Lead...</li>
+                <li>Responsible for...</li>
+              </ul>
+            </div>
+          </section>
+          <section class="job-item">
+            <div class="job-details">
+              <h3>Tata Consultancy Services India Pvt Ltd.</h3>
+              <p>Company Name</p>
+              <p>Date at job</p>
+            </div>
+            <div class="job-summary">
               <p>Job summary goes here. Add as many paragraphs as you need.</p>
               <p>Optional list:</p>
               <ul>
@@ -87,9 +161,11 @@
 
           <!-- Copy this whole <section> block to add more schools. -->
           <section>
+            <div class="item-details">
             <h3>School name - City</h3>
             <p>Designation received or program name, year attended</p>
             <p>Summary or accomplishments.</p>
+            </div>
           </section>
         </div>
         <!-- End of School block. -->
@@ -101,7 +177,7 @@
           <h2>Let's Keep in Touch!</h2>
 
           <!-- Social media and contact links. Add or remove any networks. -->
-          <ul>
+          <ul class="contact-list">
             <li><a href="mailto:email@example.com">email@example.com</a></li>
             <li>
               <a href="http://yourwebsite.com" target="_blank"
