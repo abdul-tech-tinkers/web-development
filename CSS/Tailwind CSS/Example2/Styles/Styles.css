@@ -1,0 +1,165 @@
+/* comments are here */
+
+/*
+#004777
+#00a5cf
+#a30000
+#ff7700
+#efd28d
+
+font-family: 'Caveat', cursive;
+font-family: 'Montserrat', sans-serif;
+
+*/
+
+/* Global */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: #343434;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+img {
+  width: 300px;
+}
+
+a {
+  color: #ffe66d;
+}
+a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 100px;
+  line-height: 1; /* overrides the line height written for body 1.5*/
+}
+
+.content-wrap {
+  /* brings the texts to the center and width is fixed - see blue header */
+  max-width: 800px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.divider > section {
+  border-bottom: 1px dashed #343434;
+  padding: 25px 0;
+}
+
+.divider > section:last-of-type {
+  border-bottom: none;
+}
+
+h2 {
+  font-size: 45px;
+}
+h1,
+h2 {
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  margin: 0;
+}
+
+.item-details h3 + p {
+  /* Paragraph immediately after h3 */
+  font-style: italic;
+}
+
+.item-details h3 ~ p {
+  font-style: italic;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+/* Profile  */
+
+header {
+  background: #2f3061;
+  color: #f7fff7;
+  text-align: center;
+}
+
+/* Projects */
+.projects {
+  background: #f7fff7;
+}
+
+.projects a:hover {
+  background: rgb(47, 48, 97);
+}
+
+.projects a {
+  color: #f7fff7;
+  background: #2f3061;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.viewprojectbutton {
+  display: inline;
+}
+/* Working */
+.work-experience {
+  background: #a1c6d7;
+}
+
+/* Education */
+.education {
+  background-image: url("../images/joanna-kosinska-unsplash.jpg");
+  background-size: cover;
+  background-position: top right;
+  padding-bottom: 100px;
+}
+/* Contacts */
+.contacts {
+  background-color: #343434;
+  color: #f7fff7;
+  text-align: center;
+}
+
+.project-item {
+  overflow: hidden;
+}
+
+.project-item h3 {
+  margin-top: 0;
+}
+
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.contact-list a {
+  padding: 15px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 750px) {
+  .project-item img {
+    float: left;
+    margin-right: 20px;
+  }
+  .job-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
+}
