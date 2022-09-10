@@ -8,17 +8,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
   </head>
-  <body class="h-screen w-screen">
-    <main class="h-screen w-screen bg-black text-white">
-      <nav id="links" class="flex flex-row justify-center space-x-6 py-3 hover:cursor-pointer">
-        <a class="primary-color invisible md:visible first:text-[#FFAF55]">Editor</a>
+  <body class="h-screen w-screen bg-black text-white">
+    <main class="bg-black text-white">
+      <nav id="links" class="flex flex-row justify-center space-x-6 py-5 hover:cursor-pointer">
+        <a class="primary-color invisible first:text-[#FFAF55] md:visible">Editor</a>
         <a class="primary-color first:text-[#FFAF55]">Feature</a>
         <a class="primary-color first:text-[#FFAF55]">Sponsor</a>
         <a class="primary-color first:text-[#FFAF55]">Github</a>
       </nav>
 
-      <section id="main"></section>
-      <section id="screen"></section>
+      <section class="ml-[10%] mr-[10%] flex w-[80%] flex-col items-center justify-center py-10 text-center">
+        <h1 class="text-center text-5xl md:text-8xl"><span class="bg-gradient-to-r from-[#FFAF53] via-[#FF9A2A] to-[#FF7F04] bg-clip-text font-bold uppercase text-transparent">json</span> Crack</h1>
+        <h2 class="py-6 text-center text-2xl md:text-4xl font-medium">
+          Seamlessly visualize your JSON data
+          <div>data <span class="underline decoration-[#FFAF53] decoration-dashed underline-offset-4">instantley</span> into graphs</div>
+        </h2>
+        <p class="pb-6 text-center text-base  md:text-xl text-[#B4B4B4]">Paste - Import - Fetch</p>
+        <button class="w-38 mb-6 bg-[#A13CC2] py-2 px-4 text-xl font-bold hover:bg-[#671f80] md:w-44">Go To Editor</button>
+        <button class="bg-trasparent group py-2 px-4 text-base font-bold ring-1 ring-[#D83C3E] hover:bg-[#D83C3E]">Help Json Crack Goals<i class="bi bi-heart ml-2 mt-1 text-[#D83C3E] group-hover:text-white"></i></button>
+      </section>
+      <section id="screen" class="invisible md:visible py-10">
+        <img src="https://jsoncrack.com/jsoncrack-screenshot.webp" >
+        </img>
+      </section>
       <section id="features"></section>
 
       <section id="github"></section>
