@@ -10,7 +10,10 @@ const ContactCard = (props) => {
         <p>{contact.email}</p>
         <p className="number">{contact.contact}</p>
       </div>
-      <i className="bi bi-trash mr-4 text-red-500 justify-self-end "></i>
+      <i
+        onClick={() => props.clickHandler(contact.id)}
+        className="bi bi-trash mr-4 text-red-500 justify-self-end "
+      ></i>
     </div>
   );
 };

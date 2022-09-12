@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const CONTACT_STORAGE_KEY = "contacts";
@@ -26,11 +26,21 @@ function App() {
     if (retContacts) setContacts(retContacts);
   }, []);
 
+  const onDeleteHandler = (id) => {
+    console.log(`id to be delted is in app.js ${id}`);
+    const newContactList = contacts.filter((contact) => {
+      return contact.id !== id;
+    });
+
+    setContacts(newContactList);
+    console.log(`deleted ${id}`);
+  };
+
   return (
     <div className="flex flex-col ml-[10%] mr-[10%] w-[80%]">
       <Header></Header>
       <AddContact addContact={addContact} />
-      <ContactList contacts={contacts} />
+      <ContactList getContactId={onDeleteHandler} contacts={contacts} />
     </div>
   );
 }
