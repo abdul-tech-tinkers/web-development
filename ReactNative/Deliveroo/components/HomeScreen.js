@@ -17,7 +17,7 @@ import {
 } from "react-native-heroicons/outline";
 import Headers from "./Headers.js";
 import Categories from "./Categories.js";
-
+import FeaturedRow from "./FeaturedRow.js";
 const HomeScreen = () => {
   const navigation = useNavigation();
   useLayoutEffect(() => {
@@ -47,8 +47,30 @@ const HomeScreen = () => {
 
       {/*Content*/}
 
-      <ScrollView className="flex-1 bg-gray-100">
+      <ScrollView
+        className="flex-1 bg-gray-100"
+        contentContainerStyle={{
+          paddingBottom: 100,
+        }}
+      >
         <Categories />
+        <FeaturedRow
+          id="123"
+          title="Featured"
+          description="Bengaluru love these foods"
+        ></FeaturedRow>
+
+        <FeaturedRow
+          id="1234"
+          title="Tasty Discounts"
+          description="my feature row description"
+        ></FeaturedRow>
+
+        <FeaturedRow
+          id="12345"
+          title="Offer near you!"
+          description="my feature row description"
+        ></FeaturedRow>
       </ScrollView>
     </SafeAreaView>
   );
