@@ -5,9 +5,10 @@ import {
   SafeAreaView,
   Image,
   ScrollView,
+  AppRegistry,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState, useEffect } from "react";
 import {
   UserIcon,
   SparklesIcon,
@@ -18,6 +19,10 @@ import {
 import Headers from "./Headers.js";
 import Categories from "./Categories.js";
 import FeaturedRow from "./FeaturedRow.js";
+import api from "../api/restaurents.js";
+import axios from "axios";
+import restaurentsData from "../api/restaurents.json";
+
 const HomeScreen = () => {
   const navigation = useNavigation();
   useLayoutEffect(() => {
@@ -25,6 +30,21 @@ const HomeScreen = () => {
       headerShown: false,
     });
   }, []);
+
+  /**
+   * loads restaurents.
+   */
+  useEffect(() => {
+    const getAllRestaurents = () => {
+      console.log("getting data for restaurents");
+      SetFeaturedCategories(JSON.parse(JSON.stringify(restaurentsData)));
+      console.log(FeaturedCategories);
+    };
+    getAllRestaurents();
+  }, []);
+
+  const [FeaturedCategories, SetFeaturedCategories] = useState([]);
+
   return (
     <SafeAreaView className="flex-1 pt-5 bg-white">
       {/* Header */}
@@ -35,7 +55,7 @@ const HomeScreen = () => {
         <View className="flex-row items-center space-x-1 p-1 bg-gray-200 flex-1">
           <MagnifyingGlassIcon color="gray" size={20} />
           <TextInput
-            placeholder="Restaurnet And Cuisions"
+            placeholder="Restaurent And Cuisions"
             keyboardType="default"
           />
         </View>
@@ -54,23 +74,13 @@ const HomeScreen = () => {
         }}
       >
         <Categories />
-        <FeaturedRow
-          id="123"
-          title="Featured"
-          description="Bengaluru love these foods"
-        ></FeaturedRow>
 
         <FeaturedRow
           id="1234"
           title="Tasty Discounts"
-          description="my feature row description"
+          description="special offers for RT Nagar residents"
         ></FeaturedRow>
 
-        <FeaturedRow
-          id="12345"
-          title="Offer near you!"
-          description="my feature row description"
-        ></FeaturedRow>
       </ScrollView>
     </SafeAreaView>
   );
