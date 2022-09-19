@@ -81,6 +81,11 @@ const HomeScreen = () => {
           description="special offers for RT Nagar residents"
         ></FeaturedRow>
 
+        <FeaturedRow
+          id="2501"
+          title="North Indian Restaurents"
+          description="Delicious north spices and ices"
+        ></FeaturedRow>
       </ScrollView>
     </SafeAreaView>
   );
