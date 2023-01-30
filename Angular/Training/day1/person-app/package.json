@@ -1,0 +1,14 @@
+{
+  "name": "person-app",
+  "version": "1.0.0",
+  "description": "module app",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "abdul",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
+}

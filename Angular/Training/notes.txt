@@ -1,0 +1,85 @@
+Trainer github
+https://github.com/joydip-git/siemens-ng-30thJan2023
+
+download vs code and node.js LTS
+
+vs code extensions
+------------------------------
+liveserver
+
+
+- js is a dynamic language
+- js is single threaded
+- js is a object based programming language not an object orientied programming language
+var x=100;
+x="joydip
+constructor function
+- function starts in global function execution context
+- js hoisting - registration of declared varirables and functions
+- preperation and execution two phases js execution phase
+- this, vo,scope  objects in execution context ( oc itself as object)
+- js closure - lexical environement of outer scopes.
+- js prototype object - object for not called objects
+- inner function has access to outer scope objects
+- 'use strict' - this values are not linked to any default object (window or global)
+- to define a new object or not link this to any global object use new keyword to create objects
+e.g. new person()
+- 'new' will make sure event property with this is created and have a fresh copy for each object
+- function object is base object for every object u create in js
+- execution context is created whenever function is called
+- Top level base object has constructor and prototype
+- for base object constructor links to same object constructor and prototype is null
+- any object u create creates a prototype property from prototype object (Person prototype)
+- base Person prototype has object as base
+- person.prototype is reference to base personprototype
+- object is linked with prototype chain
+
+
+
+node.js runtime to run js code without any html 
+and create desktop based applicaiton - can also used for server side
+purpose -
+- node is a js engine to run js
+- doesn't support window and document
+- no html required
+- node can run my javascript without using html  "node index.js"
+- can be used for desktop based application e.g file reading and file writing
+- oppurtunity backend server logic as well
+
+Ts:
+- static type checking
+- strict typing
+
+npm install -g typescript
+npm -> install third party node packages
+global npm packages are stored here
+C:\Users\[userid]\appdata\Roaming\npm
+e.g. C:\Users\z003uuxe\appdata\Roaming\npm
+
+- tsc is a node based tool
+- tsc --init
+
+"define the script in package.json
+and run npm run build
+
+require js is used to define one index.js
+RequireJS is a JavaScript file and module loader
+resolve the modules with a single file
+
+all the steps to web app with Ts
+----------------------------------------------
+-> npm --init --yes -> creates a package.json
+-> npm i typescript -D ->install tsc
+-> tsc --int -> creates a tsconfig.json file
+-> specify configuration in tsconfig.json
+-> npm run scriptname
+
+npm i lite-server -D
+
+
+
+
+
+
+
+
