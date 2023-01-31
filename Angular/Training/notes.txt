@@ -7,7 +7,7 @@ vs code extensions
 ------------------------------
 liveserver
 
-
+- EVERYTHING IS A FUNCTION IN JS
 - js is a dynamic language
 - js is single threaded
 - js is a object based programming language not an object orientied programming language
@@ -75,6 +75,36 @@ all the steps to web app with Ts
 -> npm run scriptname
 
 npm i lite-server -D
+
+- callback, calls my function once the exectuion is done
+- Eventloop - service worker
+- promise
+
+promise
+initial state
+---------------
+state: pending
+result: undefined
+
+success:
+----------
+state: fulfilled/resolved
+result: values
+
+failure:
+---------
+state: rejected
+result:undefined
+
+async await is a wrapper for promise
+-nodejs might spawn extra thread for promises
+- function type in ts - callback can be typefied.
+type callbackType = (err:Err | undefined, res:number | undefined)=> void
+
+
+Angular
+--------------------------
+
 
 
 
