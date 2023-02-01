@@ -24,10 +24,24 @@ for (let i of arr) {
   console.log(i);
 }
 
+const person = {
+  name: "abdul",
+  id: 1,
+};
+for (let p in person) {
+  console.log(`${p} is ${person[p]}`);
+}
+
 console.log("----------------------------for in----------------------------");
 for (let i in arr) {
   console.log(i);
 }
+
+const person1 = {
+  name: "abdul",
+  id: 1,
+};
+
 console.log("----------------------------map----------------------------");
 let returnArray = arr.map((ele, index) => {
   return ele * 10;

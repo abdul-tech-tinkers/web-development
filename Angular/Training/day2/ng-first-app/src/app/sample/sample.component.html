@@ -1,0 +1,7 @@
+<p>List of people</p>
+<ng-template #norecords>
+  <span>No records found</span>
+</ng-template>
+<ul *ngIf="people.length > 0; else norecords">
+  <li *ngFor="let p of people">{{ p }}</li>
+</ul>

@@ -6,6 +6,8 @@ download vs code and node.js LTS
 vs code extensions
 ------------------------------
 liveserver
+Angular Language Service
+
 
 - EVERYTHING IS A FUNCTION IN JS
 - js is a dynamic language
@@ -102,8 +104,52 @@ async await is a wrapper for promise
 type callbackType = (err:Err | undefined, res:number | undefined)=> void
 
 
+transpilation
+module loader to load all modules to index.
+
 Angular
 --------------------------
+tool to do transpilation
+ and module loader 
+ developer cli
+ -server to run the package 
+ and do other configuriaton like tsconfig, package.json exectuion
+known as angular cli
+
+- npm i @angular/cli -g
+- ng version
+- installed at C:\Users\z003uuxe\appdata\Roaming\npm
+- new app => ng new ng-first-app
+- jasmine is the test framwork
+- karma test runtime
+- rxjs - reactive extenstion to javascript - asynchrnous programming - observable and observer object
+- Reactivex.io
+
+- component - has design
+- directive
+    - *ngX or *X => structural directive
+    - X => attribute directive
+    - component directive : @Component 
+- pipe
+- service
+- module
+all of them are defined as class with Decoratos like attribute in .net
+- component decorator start with @
+e.g. @Component(), @directive, @pipe, @Injectable, @NgModule
+
+binding
+- {{property-of-code}} - interpolation => converts the property value to the string
+- <element [attribute-name]="property-of-code" - property binding => retains original type of the property value
+
+(event-name)="method-of-component(args)"
+- change detection strategy - any change in component property is notified to UI, simillar to onproperty changed in wpf
+
+- directive is used to extend the behavior of html element
+
+ng g m calculator
+ng g c calculator/components/calculations - create calcultions component inside
+calculator/components directory
+
 
 
 

@@ -1,0 +1,19 @@
+<h2>{{ welcomeMessage }}</h2>
+<br />
+<div>
+  <label for="txtMessage">Enter Message</label>
+  <input
+    type="text"
+    id="txtMessage"
+    [style.width.px]="width"
+    #message
+    value="{{ welcomeMessage }}"
+  />
+</div>
+<!--click is a register handler-->
+<button type="button" (click)="changeMessage(message.value)">
+  Change Message
+</button>
+<app-sample> </app-sample>
+
+<app-calculations></app-calculations>
