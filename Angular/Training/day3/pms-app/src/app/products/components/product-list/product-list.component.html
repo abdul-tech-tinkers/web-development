@@ -1,0 +1,30 @@
+<ng-template #loadingTemplate>
+  <span>Loading...</span>
+</ng-template>
+<div *ngIf="allProducts; else loadingTemplate" class="container containerStyle">
+  <table class="table table-hover">
+    <thead class="theadStyle">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody class="table-dark">
+      <tr *ngFor="let p of allProducts">
+        <td>
+          <img
+            class="imgStyle"
+            [src]="p.imageUrl"
+            alt="NA"
+            [title]="p.productName"
+          />
+        </td>
+        <td>{{ p.productName }}</td>
+        <td>{{ p.price }}</td>
+        <td>{{ p.starRating }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

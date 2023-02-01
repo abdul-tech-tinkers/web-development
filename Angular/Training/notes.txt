@@ -151,6 +151,68 @@ ng g c calculator/components/calculations - create calcultions component inside
 calculator/components directory
 
 
+Day 3
+----------------------
+  - npm i bootstrap
+  - update the angular.json
+   "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+
+  - Modules:APP
+    ----------------------------------
+    app.module.ts
+    common-features - to organize components for features but regsitered with app module only
+      components
+         Dashboard
+            - dashboard.component.html+css+ts
+         Home 
+            - home.component.html+css+ts
+
+ng command:
+ ng g c common-features/component/dashboard --skip-tests
+ ng g c common-features/component/home --skip-tests
+     ----------------------------------
+
+
+    Modules: Products
+    ----------------------------------
+         products.module.ts
+         components
+           add-product
+              add-product.component
+            product-list
+              product-list.component.*
+            filter-product
+            product-container holds product-list and filter-product
+
+    Pipes
+       filter-product.pipe.ts
+
+    Services
+       product.service.ts
+    ----------------------------------
+ng
+ng g m products    
+ng g c products/components/add-product --skip-tests
+ng g c products/components/product-list --skip-tests
+ng g c products/components/filter-product --skip-tests
+ng g c products/components/product-container --skip-tests
+
+- dependency injection of service
+  asset level
+  module level
+  top module level
+component life cycle
+ - init
+ - change
+ - destory
+ - activate
+ - activated
+     
+
+
 
 
 
