@@ -1,37 +1,62 @@
 import { products } from 'src/data/products';
 import { HttpClient } from '@angular/common/http';
-import { createInjectableType } from '@angular/compiler';
-import { Injectable, Inject } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Product } from '../models/product.model';
 import { ApiResponse } from '../models/api-response.model';
-import { PRODUCT_URL } from 'src/constants/app-constants';
+import { Product } from '../models/product.model';
+import { PRODUCT_URL_TOKEN } from 'src/constants/app-constants';
+import { IProductService } from './contracts/product.contract';
 
-// HttpClient is part of HttpClientModule should be imported in ur module.
 @Injectable()
-export class ProductService {
+export class ProductService implements IProductService {
   constructor(
     private http: HttpClient,
-    @Inject(PRODUCT_URL) private url: string
+    @Inject(PRODUCT_URL_TOKEN) private url: string
   ) {}
-  getProducts(): Observable<ApiResponse<Product[]>> {
-    // const products: Observable<Object> = this.http.get(this.url);
-    // const productsPipe: Observable<ApiResponse<Product[]>> = products.pipe(
-    //   map((response: any): ApiResponse<Product[]> => {
-    //     return {
-    //       message: response.message,
-    //       data: response.data,
-    //     };
-    //   })
-    // );
+  getAll(): Observable<ApiResponse<Product[]>> {
     return this.http.get<ApiResponse<Product[]>>(this.url);
   }
-  getProductsById(id: number): Observable<ApiResponse<Product>> {
-    // const found = products.find((product) => {
-    //   return product.productId === id;
-    // });
-    // return { ...found };
-
+  get(id: number): Observable<ApiResponse<Product>> {
     return this.http.get<ApiResponse<Product>>(`${this.url}/${id}`);
   }
+  add(data: Product): Observable<ApiResponse<Product[]>> {
+    return this.http.post<ApiResponse<Product[]>>(this.url, data);
+  }
+  update(data: Product): Observable<ApiResponse<Product[]>> {
+    return this.http.put<ApiResponse<Product[]>>(
+      `${this.url}/${data.productId}`,
+      data
+    );
+  }
+  delete(id: number): Observable<ApiResponse<Product[]>> {
+    return this.http.delete<ApiResponse<Product[]>>(`${this.url}/${id}`);
+  }
+  /*
+    getProducts(): Observable<ApiResponse<Product[]>> {
+        return this.http.get<ApiResponse<Product[]>>(this.url)
+        //const obs: Observable<Object> = this.http.get(this.url)
+        // const ob: Observable<ApiResponse<Product[]>> =
+        //     obs.pipe(
+        //         map(
+        //             (resp: any): ApiResponse<Product[]> => {
+        //                 return <ApiResponse<Product[]>>resp
+        //                 // return {
+        //                 //     message: resp.message,
+        //                 //     data: resp.data
+        //                 // }
+        //             }
+        //         )
+        //     )
+        //return [...products]
+    }
+    getProductById(id: number): Observable<ApiResponse<Product>> {
+        // const found = products.find(
+        //     (p) => {
+        //         return p.productId === id
+        //     }
+        // )
+        // return { ...found }
+        return this.http.get<ApiResponse<Product>>(`${this.url}/${id}`)
+    }
+    */
 }

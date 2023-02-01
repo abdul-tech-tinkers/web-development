@@ -1,1 +1,9 @@
-<p>filter-product works!</p>
+<label for="filterTxt">Filter:&nbsp;</label>
+<input
+  id="filterTxt"
+  type="text"
+  placeholder="Enter text to filter"
+  [value]="filterText"
+  (keyup)="filterTextChange(filter.value)"
+  #filter
+/>

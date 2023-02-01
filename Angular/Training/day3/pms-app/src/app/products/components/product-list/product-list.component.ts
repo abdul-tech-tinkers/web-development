@@ -1,42 +1,50 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ProductService } from '../../services/product.service';
-import { Product } from '../../models/product.model';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { PRODUCT_SERVICE_TOKEN } from 'src/constants/app-constants';
+import { Product } from '../../models/product.model';
+import { IProductService } from '../../services/contracts/product.contract';
+import { ProductService } from '../../services/product.service';
 
+//@Injectable()
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
+  // providers: [ProductService]
 })
 export class ProductListComponent implements OnInit, OnDestroy {
   allProducts?: Product[];
-  loading: boolean = true;
+  loadingDone = false;
   errorMessage = '';
-  private getProductsSubscription?: Subscription;
-  constructor(private productService: ProductService) {}
+  filterText = '';
+  private productSubscription?: Subscription;
 
+  constructor(@Inject(PRODUCT_SERVICE_TOKEN) private ps: IProductService) {}
+  ngOnDestroy(): void {
+    this.productSubscription?.unsubscribe();
+  }
   ngOnInit(): void {
-    console.log('product list component init');
-    this.getProductsSubscription = this.productService.getProducts().subscribe({
-      next: (response) => {
-        console.log('get products subscribe next');
-        this.allProducts = response.data;
-        this.errorMessage = '';
-        this.loading = false;
+    this.productSubscription = this.ps.getAll().subscribe({
+      next: (resp) => {
+        if (resp.data !== null) {
+          this.allProducts = resp.data;
+          this.errorMessage = '';
+          this.loadingDone = true;
+        } else {
+          this.allProducts = undefined;
+          this.errorMessage = resp.message;
+          this.loadingDone = true;
+        }
       },
-      error: (error: any) => {
-        console.log('get products subscribe error');
+      error: (err: any) => {
         this.allProducts = undefined;
-        this.errorMessage = error.message;
-        this.loading = false;
-      },
-      complete: () => {
-        console.log('get products subscribe complete');
+        this.errorMessage = err.message;
+        this.loadingDone = true;
       },
     });
   }
-
-  ngOnDestroy() {
-    this.getProductsSubscription?.unsubscribe();
-  }
+  updateFilterText = (text: string) => {
+    console.log(text);
+    this.filterText = text;
+  };
 }
