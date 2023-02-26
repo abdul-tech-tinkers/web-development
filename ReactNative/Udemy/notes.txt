@@ -1,1 +1,26 @@
  -> npx create-expo-app AwesomeProject
+
+src/
+├── assets/      # Images, fonts, and other static assets
+├── components/  # Reusable UI components
+├── contexts/    # Contexts for global state management
+├── hooks/       # Custom hooks
+├── interfaces/  # TypeScript interfaces
+├── navigation/  # Navigation-related components and logic
+├── screens/     # Top-level screens
+├── services/    # Networking, storage, and other service-related code
+├── utils/       # Utility functions and modules
+└── App.tsx      # The root component of the app
+
+This is a common structure that is used in many React Native projects. You can adjust it to fit your specific needs and add or remove folders as necessary.
+
+The assets folder is used to store images, fonts, and other static assets that are used in the app.
+The components folder contains reusable UI components, such as buttons, cards, and form fields, that are used throughout the app.
+The contexts folder is used to store contexts for global state management, such as user authentication and data storage.
+The hooks folder contains custom hooks, which are reusable functions that can be used to manage state, side effects, and other aspects of your app.
+The navigation folder is used to store navigation-related components and logic, such as the stack navigator and tab navigator.
+The screens folder contains top-level screens, which are the main pages of the app, and are used to organize the navigation flow.
+The services folder contains networking, storage, and other service-related code, such as API clients and database access code.
+The utils folder is used to store utility functions and modules, such as helper functions and utility classes.
+The App.tsx file is the root component of the app and is used to initialize and render the app.
+This structure makes it easy to organize and manage the code for your app and ensures that the code is modular and maintainable.
