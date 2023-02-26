@@ -26,8 +26,8 @@ constructor function
 - 'use strict' - this values are not linked to any default object (window or global)
 - to define a new object or not link this to any global object use new keyword to create objects
 e.g. new person()
-- 'new' will make sure event property with this is created and have a fresh copy for each object
-- function object is base object for every object u create in js
+- 'new' will make sure event property with ''this' is created and have a fresh copy for each object
+- function 'object' is base object for every object u create in js
 - execution context is created whenever function is called
 - Top level base object has constructor and prototype
 - for base object constructor links to same object constructor and prototype is null
@@ -211,6 +211,7 @@ component life cycle
  - activate
  - activated
      
+
 
 
 
